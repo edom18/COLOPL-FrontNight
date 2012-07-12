@@ -1,0 +1,73 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$baseWidth: 200px;
+$baseHeight: 100px;
+
+body {
+    padding: 15px;
+}
+
+.controller {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#obj {
+    width: $baseWidth;
+    height: $baseHeight;
+    overflow: hidden;
+    padding: 15px;
+    background-color: red;
+    color: #fff;
+    @include text-shadow(-1px -1px 0px rgba(0, 0, 0, 0.3));
+    @include transition(all .3s ease-in-out);
+    @include box-shadow(2px 2px 5px rgba(0, 0, 0, 0.7));
+    @include background-image(linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)));
+
+    &.type1 {
+        width: $baseWidth   * 2;
+        height: $baseHeight * 2;
+        background-color: green;
+        color: #000;
+        @include text-shadow(1px 1px 0px rgba(255, 255, 255, 0.8));
+        @include border-radius(30px);
+        @include box-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+        @include transform(rotate(10deg) translate(100px, 50px));
+    }
+
+    &.type2 {
+        width: $baseWidth   * 0.5;
+        height: $baseHeight * 0.5;
+        background-color: blue;
+        @include border-radius(2px);
+        @include box-shadow(2px 2px 5px rgba(0, 0, 0, 0.9));
+        @include transform(rotate(50deg) translate(300px));
+    }
+
+    &.type3 {
+        width: $baseWidth   * 1.5;
+        height: $baseHeight * 1;
+        background-color: yellow;
+        color: orange;
+        @include border-radius(20px);
+        @include text-shadow(1px 1px 0px rgba(0, 0, 0, 0.8));
+        @include box-shadow(1px 1px 50px rgba(0, 0, 0, 0.2));
+        @include transform(rotate(-30deg));
+    }
+
+    &.type4 {
+        width: $baseWidth   * 0.5;
+        height: $baseHeight * 1.5;
+        background-color: gray;
+        color: #000;
+        @include text-shadow(1px 1px 0px rgba(255, 255, 255, 0.8));
+        @include border-radius(5px);
+        @include box-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
+        @include transform(rotate(40deg) translate(250px, -250px));
+    }
+
+    &.type5 {
+        @include transform(rotate(-30deg) translate(10px, 250px));
+    }
+}

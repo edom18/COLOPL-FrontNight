@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Compass sample</title>
+<link rel="stylesheet" href="css/main.css" />
+<script>
+(function (win, doc) {
+
+    'use strict';
+
+    var typeList = [
+            'type0', 'type1', 'type2', 'type3', 'type4', 'type5'
+        ],
+        index = 1;
+
+    win.addEventListener('DOMContentLoaded', function () {
+
+        var obj = doc.querySelector('#obj'),
+            clsList = obj.classList,
+            
+            btn = doc.querySelector('.controller input');
+
+        btn.addEventListener('click', function () {
+        
+            var _index = index,
+                prevType = typeList[(_index -= 1) < 0 ? typeList.length - 1 : _index],
+                nextType = typeList[index];
+
+            clsList.remove(prevType);
+            clsList.add(nextType);
+
+            index = ++index % typeList.length;
+        }, false);
+
+    }, false);
+}(this, document));
+</script>
+</head>
+<body>
+	
+    <div class="controller">
+    	<p><input type="button" value="Go!" /></p>
+    <!-- /.controller --></div>
+
+    <div id="obj">
+        <ul>
+            <li>様々なmixinが標準で用意されている</li>
+            <li>画像に対する処理が充実</li>
+            <li>プロジェクト内で設定を共通化できる</li>
+        </ul>
+    <!-- /#obj --></div>
+</body>
+</html>
